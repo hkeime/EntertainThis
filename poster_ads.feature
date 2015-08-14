@@ -16,8 +16,17 @@ Scenario: Poster Ad: Appears on a Video page
 
 Scenario: Poster Scroll Ad: Basic functionality
   Given I am navigating there with cleared cache and cookies
-  When I navigate to the "Poster Scroll" advertisement 
+  When I navigate to the "Poster Scroll" advertisement
   When I scroll "down"
     Then the "Poster Scroll ad" appears
   When I scroll "up"
     Then the "Poster Scroll ad doesnot" appears
+
+  #New scenarios for Entertain This.
+  Scenario: Poster Ad: Appears on a Entertain This Fronts
+    Given that I am on a "ET homepage with poster ad"
+    Then The poster ad should be below top5
+    When that I am on a "ET category front with poster ad"
+    Then The poster ad should be on top of right rail
+    When that I am on a story page with a "ET story with poster ad"
+    hen The poster ad should be on top of right rail
