@@ -23,10 +23,24 @@ Scenario: Poster Scroll Ad: Basic functionality
     Then the "Poster Scroll ad doesnot" appears
 
   #New scenarios for Entertain This.
-  Scenario: Poster Ad: Appears on a Entertain This Fronts
+  Scenario: Poster Ad: Appears on a Entertain This Pages
     Given that I am on a "ET homepage with poster ad"
     Then The poster ad should be below top5
     When that I am on a "ET category front with poster ad"
     Then The poster ad should be on top of right rail
     When that I am on a story page with a "ET story with poster ad"
-    hen The poster ad should be on top of right rail
+    Then The poster ad should be on top of right rail
+
+
+    Scenario Outline: Poster Scroll Ad: Appears on Entertain This Pages after scroll
+          Given I am on a ET "<page>"
+          When I scroll "down"
+          Then the "Poster Scroll ad" appears
+          When I scroll "up"
+          Then the "Poster Scroll ad doesnot" appears
+            Examples:
+                  | page     |
+                  | home     |
+                  | category |
+                  | story    |
+                  
