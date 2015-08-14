@@ -3,14 +3,12 @@ Feature: The ET branded navigation module displays and funcitons on Entertain Th
 
 Scenario: ET navigation module displays on ET pages
   Given I am on ET "page" #pages to be defined as ET Home, ET Category Front, ET Article
-    Then the navigation module ad should display on the top of page
-    And navigation module shold display on bottom of page
-    And the module should contain category links
-
+    Then the navigation module displays on the top of page
+    And navigation module displays on bottom of page
 
 Scenario Outline: Category links in navigation module
       Given I am on a ET page
-        Then the ET navigation moodule displays "<category>"
+        Then ET navigation module displays "<category>"
         When I click "<category>"
         Then I am on USAT Life "<navURL>"
         Examples:
